@@ -10,7 +10,6 @@
 }
 
 .ContenedorPadre {
-    border: 1px solid black;
     width: 100%;
     background-image: url(./images/bg-top.svg), url(./images/bg-bottom.svg), linear-gradient(135deg, hsl(240, 78%, 98%) 0%, hsl(240, 9%, 98%) 100%);
     background-repeat: no-repeat, no-repeat;
@@ -22,9 +21,114 @@ header {
     text-align: center;
 }
 
+.logo {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    padding: 0.3em;
+}
+
+#menutoggle {
+    display: block;
+    position: relative;
+    height: 2.5em;
+    z-index: 1;
+    background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.navegacion a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 0 0 1em 0;
+}
+
+.navegacion a:hover {
+    color: hsl(232, 13%, 33%);
+}
+
+.hamburguesa {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    left: 88%;
+    cursor: pointer;
+    opacity: 0;
+    /* hide this */
+    z-index: 2;
+    /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+}
+
+#linea {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    left: 88%;
+    top: 20%;
+    background: white;
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    z-index: 1;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+}
+
+#menutoggle #linea:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menutoggle #linea:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+
+/* Transform all the slices of hamburger into a crossmark.*/
+
+#menutoggle .hamburguesa:checked~#linea {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: white;
+}
+
+
+/*But let's hide the middle one.*/
+
+#menutoggle .hamburguesa:checked~#linea:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+/*Ohyeah and the last one should go the other direction*/
+
+#menutoggle .hamburguesa:checked~#linea:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+.navegacion {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translate(0, -120%);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menutoggle .hamburguesa:checked~.navegacion {
+    transform: translate(0, 5%);
+}
+
 h1 {
     color: hsl(233, 13%, 49%);
-    padding: 20% 0 12% 0;
+    padding: 12% 0 12% 0;
 }
 
 h2 {
@@ -89,7 +193,7 @@ section {
 }
 
 .Precio {
-    font-size: 5em;
+    font-size: 4.6em;
     padding: 0 5% 5% 5%;
     color: hsl(232, 13%, 33%);
 }
@@ -133,6 +237,12 @@ section {
     .btnLearnMore.Profesional:hover {
         background: hsl(237, 63%, 64%);
         color: white;
+    }
+    #linea {
+        left: 95%;
+    }
+    .hamburguesa {
+        left: 95%;
     }
 }
 
@@ -190,6 +300,7 @@ section {
     opacity: 0;
     width: 0;
     height: 0;
+    display: none;
 }
 
 .mensual {
