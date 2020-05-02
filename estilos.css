@@ -1,316 +1,316 @@
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
- :root {
-    font-family: 'Montserrat';
-    font-size: 15px;
-}
-
-.ContenedorPadre {
-    width: 100%;
-    background-image: url(./images/bg-top.svg), url(./images/bg-bottom.svg), linear-gradient(135deg, hsl(240, 78%, 98%) 0%, hsl(240, 9%, 98%) 100%);
-    background-repeat: no-repeat, no-repeat;
-    background-position: right top, left bottom, center;
-}
-
-header {
-    width: 100%;
-    text-align: center;
-}
-
-.logo {
-    position: absolute;
-    width: 2em;
-    height: 2em;
-    padding: 0.3em;
-}
-
-#menutoggle {
-    display: block;
-    position: relative;
-    height: 2.5em;
-    z-index: 1;
-    background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
-    -webkit-user-select: none;
-    user-select: none;
-}
-
-.navegacion a {
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    padding: 0 0 1em 0;
-}
-
-.navegacion a:hover {
-    color: hsl(232, 13%, 33%);
-}
-
-.hamburguesa {
-    display: block;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    left: 88%;
-    cursor: pointer;
-    opacity: 0;
-    /* hide this */
-    z-index: 2;
-    /* and place it over the hamburger */
-    -webkit-touch-callout: none;
-}
-
-#linea {
-    display: block;
-    width: 30px;
-    height: 4px;
-    margin-bottom: 5px;
-    position: relative;
-    left: 88%;
-    top: 20%;
-    background: white;
-    border-radius: 3px;
-    transform-origin: 4px 0px;
-    z-index: 1;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
-}
-
-#menutoggle #linea:first-child {
-    transform-origin: 0% 0%;
-}
-
-#menutoggle #linea:nth-last-child(2) {
-    transform-origin: 0% 100%;
-}
-
-
-/* Transform all the slices of hamburger into a crossmark.*/
-
-#menutoggle .hamburguesa:checked~#linea {
-    opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
-    background: white;
-}
-
-
-/*But let's hide the middle one.*/
-
-#menutoggle .hamburguesa:checked~#linea:nth-last-child(3) {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-
-/*Ohyeah and the last one should go the other direction*/
-
-#menutoggle .hamburguesa:checked~#linea:nth-last-child(2) {
-    transform: rotate(-45deg) translate(0, -1px);
-}
-
-.navegacion {
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
-    -webkit-font-smoothing: antialiased;
-    /* to stop flickering of text in safari */
-    transform-origin: 0% 0%;
-    transform: translate(0, -120%);
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-}
-
-#menutoggle .hamburguesa:checked~.navegacion {
-    transform: translate(0, 5%);
-}
-
-h1 {
-    color: hsl(233, 13%, 49%);
-    padding: 12% 0 12% 0;
-}
-
-h2 {
-    color: hsl(234, 14%, 74%);
-    display: inline-block;
-    font-size: 1rem;
-    padding: 0 5% 10% 5%;
-}
-
-.switch {
-    transform: translateY(30%)
-}
-
-section {
-    width: 90%;
-    position: relative;
-    margin: 0 auto;
-}
-
-.Plan {
-    border: 1px solid #fcfdff;
-    box-shadow: 0px 0px 0.5px hsl(240, 78%, 98%);
-    text-align: center;
-    border-radius: 3%;
-    margin: 10% 0;
-    background: white;
-}
-
-.Titulo {
-    padding: 10% 5% 5% 5%;
-    margin: 0 5%;
-    font-size: 1.2rem;
-    color: hsl(233, 13%, 49%);
-}
-
-.Detalle {
-    padding: 5%;
-    margin: 0 5%;
-    border-bottom: 1px solid hsl(234, 14%, 74%);
-    color: hsl(233, 13%, 49%);
-}
-
-.Plan.Profesional {
-    background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
-}
-
-.btnLearnMore {
-    background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
-    padding: 5%;
-    margin: 10% 5%;
-    width: 90%;
-    font-size: 0.8rem;
-    font-family: 'Montserrat';
-    color: white;
-    border-radius: 0.5em;
-    letter-spacing: 0.2em;
-}
-
-.btnLearnMore.Profesional {
-    background: white;
-    color: hsl(237, 63%, 64%);
-}
-
-.Precio {
-    font-size: 4.6em;
-    padding: 0 5% 5% 5%;
-    color: hsl(232, 13%, 33%);
-}
-
-.Profesional {
-    color: #fefefe;
-}
-
-.signo {
-    font-size: 0.55em;
-    margin-right: 0.2em;
-    display: inline-block;
-    transform: translateY(-20%);
-}
-
-@media screen and (min-width:1024px) {
-    .Plan {
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+     :root {
+        font-family: 'Montserrat';
+        font-size: 15px;
+    }
+    
+    .contenedorpadre {
+        width: 100%;
+        background-image: url(./images/bg-top.svg), url(./images/bg-bottom.svg), linear-gradient(135deg, hsl(240, 78%, 98%) 0%, hsl(240, 9%, 98%) 100%);
+        background-repeat: no-repeat, no-repeat;
+        background-position: right top, left bottom, center;
+    }
+    
+    .logo {
+        position: absolute;
+        z-index: 3;
+        width: 2em;
+        height: 2em;
+        padding: 0.3em;
+    }
+    
+    #menutoggle {
+        display: block;
+        position: relative;
+        height: 2.5em;
+        background: hsl(237, 63%, 64%);
+        z-index: 1;
+    }
+    
+    .navegacion a {
         display: inline-block;
-        width: 30%;
-        margin: 5% 0;
+        text-decoration: none;
+        font-size: 1rem;
+        color: white;
+        padding: 0 0 1em 0;
     }
-    .Plan.Profesional {
-        padding: 2% 0%;
+    
+    .navegacion a:hover {
+        color: hsl(232, 13%, 33%);
     }
-    section {
+    
+    .hamburguesa {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        left: 88%;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+    }
+    
+    #linea {
+        display: block;
+        width: 30px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        left: 88%;
+        top: 20%;
+        background: white;
+        border-radius: 3px;
+        transform-origin: 4px 0px;
+        z-index: 1;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+    }
+    
+    #linea:first-child {
+        transform-origin: 0% 0%;
+    }
+    
+    #linea:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+    /* Transform all the slices of hamburger into a crossmark.*/
+    
+    .hamburguesa:checked~#linea {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: white;
+    }
+    /*But let's hide the middle one.*/
+    
+    .hamburguesa:checked~#linea:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+    /*Ohyeah and the last one should go the other direction*/
+    
+    .hamburguesa:checked~#linea:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+    
+    .navegacion {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        background: hsl(237, 63%, 64%);
+        transform-origin: 0% 0%;
+        transform: translate(0, -110%);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+    
+    .hamburguesa:checked~.navegacion {
+        transform: translate(0, 6%);
+    }
+    
+    header {
+        width: 100%;
         text-align: center;
     }
+    
     h1 {
-        padding: 5% 0;
+        color: hsl(233, 13%, 49%);
+        padding: 12% 0 12% 0;
     }
+    
     h2 {
-        padding: 0 5% 0 5%;
+        color: hsl(234, 14%, 74%);
+        display: inline-block;
+        font-size: 1rem;
+        padding: 0 5% 10% 5%;
     }
-    .Precio {
-        font-size: 3em;
+    
+    .switch {
+        transform: translateY(30%)
     }
-    .btnLearnMore:hover {
+    
+    section {
+        width: 90%;
+        position: relative;
+        margin: 0 auto;
+    }
+    
+    .plan {
+        border: 1px solid #fcfdff;
+        box-shadow: 0px 0px 0.5px hsl(240, 78%, 98%);
+        text-align: center;
+        border-radius: 3%;
+        margin: 10% 0;
+        background: white;
+    }
+    
+    .titulo {
+        padding: 10% 5% 5% 5%;
+        margin: 0 5%;
+        font-size: 1.2rem;
+        color: hsl(233, 13%, 49%);
+    }
+    
+    .detalle {
+        padding: 5%;
+        margin: 0 5%;
+        border-bottom: 1px solid hsl(234, 14%, 74%);
+        color: hsl(233, 13%, 49%);
+    }
+    
+    .plan.profesional {
+        background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    }
+    
+    .btnlearnmore {
+        background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+        padding: 5%;
+        margin: 10% 5%;
+        width: 90%;
+        font-size: 0.8rem;
+        font-family: 'Montserrat';
+        color: white;
+        border-radius: 0.5em;
+        letter-spacing: 0.2em;
+    }
+    
+    .btnlearnmore.profesional {
         background: white;
         color: hsl(237, 63%, 64%);
     }
-    .btnLearnMore.Profesional:hover {
-        background: hsl(237, 63%, 64%);
-        color: white;
+    
+    .precio {
+        font-size: 3.8em;
+        padding: 0 5% 5% 5%;
+        color: hsl(232, 13%, 33%);
     }
-    #linea {
-        left: 95%;
+    
+    .profesional {
+        color: #fefefe;
     }
-    .hamburguesa {
-        left: 95%;
+    
+    .signo {
+        font-size: 0.55em;
+        margin-right: 0.2em;
+        display: inline-block;
+        transform: translateY(-20%);
     }
-}
-
-
-/* Este es el código para el toggle */
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: hsl(237, 63%, 64%);
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    border-radius: 50%;
-}
-
-#price:checked+header .switch>.slider {
-    background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
-}
-
-#price:focus+header .switch>.slider {
-    box-shadow: 0 0 1px hsl(237, 63%, 64%);
-}
-
-#price:checked+header .switch>.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-#price {
-    opacity: 0;
-    width: 0;
-    height: 0;
-    display: none;
-}
-
-.mensual {
-    display: none;
-}
-
-#price:checked~section .Plan>ul .Precio .anual {
-    display: none;
-}
-
-#price:checked~section .Plan>ul .Precio .mensual {
-    display: inline-block;
-}
+    
+    @media screen and (min-width:1024px) {
+        .plan {
+            display: inline-block;
+            width: 30%;
+            margin: 5% 0;
+        }
+        .plan.profesional {
+            padding: 2% 0%;
+        }
+        section {
+            text-align: center;
+        }
+        h1 {
+            padding: 5% 0;
+        }
+        h2 {
+            padding: 0 5% 0 5%;
+        }
+        .precio {
+            font-size: 3em;
+        }
+        .btnlearnmore:hover {
+            background: white;
+            color: hsl(237, 63%, 64%);
+        }
+        .btnlearnmore.profesional:hover {
+            background: hsl(237, 63%, 64%);
+            color: white;
+        }
+        #linea {
+            left: 94%;
+            width: 40px;
+            height: 5px;
+            top: 25%;
+            margin-bottom: 6px;
+        }
+        .hamburguesa {
+            left: 95%;
+        }
+        #menutoggle {
+            height: 4em;
+        }
+        .logo {
+            width: 3.8em;
+            height: 3.8em;
+            padding: 0.1em;
+            left: 2%;
+        }
+    }
+    /* Este es el código para el toggle */
+    
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: hsl(237, 63%, 64%);
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        border-radius: 34px;
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+    
+    #price:checked+header .switch>.slider {
+        background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    }
+    
+    #price:focus+header .switch>.slider {
+        box-shadow: 0 0 1px hsl(237, 63%, 64%);
+    }
+    
+    #price:checked+header .switch>.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+    
+    #price {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        display: none;
+    }
+    
+    .mensual {
+        display: none;
+    }
+    
+    #price:checked~section .plan>ul .precio .anual {
+        display: none;
+    }
+    
+    #price:checked~section .plan>ul .precio .mensual {
+        display: inline-block;
+    }
